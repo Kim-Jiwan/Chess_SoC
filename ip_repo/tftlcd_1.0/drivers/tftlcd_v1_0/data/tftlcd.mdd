@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER tftlcd
+	OPTION supported_peripherals = (tftlcd);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = tftlcd;
+END DRIVER
