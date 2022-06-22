@@ -21,10 +21,8 @@ SoC 설계 및 프로그래밍 강의를 수강하면서 진행한 텀프로젝�
 ### 2-1. Block diagram
 ![block_diagram](https://user-images.githubusercontent.com/65444464/174958474-436cfc02-0714-4e07-8a34-ce2e34289909.jpg)
 UART로 부터 input 정보를 받고, 각 PS에서 처리 후 각 IP에 뿌려주는 방식입니다. 그리고 push button을 통해 ISR에 진입합니다.
-\
 ### 2-2. Flow chart
 ![flow_chart](https://user-images.githubusercontent.com/65444464/174958592-47bd21c2-d578-4d1b-ad87-e5c8434d682c.jpg)
-\
 ## 3. main.c
 ```C
 #include <stdio.h>
