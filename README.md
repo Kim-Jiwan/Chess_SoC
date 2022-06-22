@@ -21,11 +21,10 @@ SoC 설계 및 프로그래밍 강의를 수강하면서 진행한 텀프로젝�
 ### 2-1. Block diagram
 ![block_diagram](https://user-images.githubusercontent.com/65444464/174958474-436cfc02-0714-4e07-8a34-ce2e34289909.jpg)
 UART로 부터 input 정보를 받고, 각 PS에서 처리 후 각 IP에 뿌려주는 방식입니다. 그리고 push button을 통해 ISR에 진입합니다.
-\
 ### 2-2. Flow chart
 ![flow_chart](https://user-images.githubusercontent.com/65444464/174958592-47bd21c2-d578-4d1b-ad87-e5c8434d682c.jpg)
-\
-## 3. main.c
+
+## 3. SDK
 ```C
 #include <stdio.h>
 #include <stdlib.h>
@@ -283,3 +282,18 @@ int main()
 }
 ```
 user define function은 repo의 main.c 파일 및 문서를 통해 확인하시면 됩니다.
+
+## 4. 한계점
+4-1. 체스 알고리즘 구현 실패\
+프로젝트의 처음 목표는 체스 알고리즘을 이용해서 컴퓨터 대전까지 구현하는 것 이였습니다. 하지만 코딩 실력 부족으로 PS에 체스 알고리즘을 이식하는데 실패했고, TFT 상에 체스 게임을 출력하는데 그쳤습니다.\
+시간이 더 있었다면 현재 체스말의 위치를 기억하는 logic을 추가하여 이동가능한 영역을 표시하는 기능을 추가하고 싶었는데 그러지 못해서 아쉽습니다.\
+\
+4-2. timer가 끝날 때 interrupt를 발생시켜 turn을 넘기는 기능을 구현 실패\
+PL 상에서 IP간의 interconnect를 이해하지 못해서 구현에 실패했습니다. 다른 조에서 이 기능을 구현했는데, push button IP에 wire을 연결해 timer의 각 자릿수가 0이 되었을 때 turn을 변경하라는 signal을 보내주는 방식이였습니다.
+ 
+## 5. 후기
+전자공학부에 입학하고 들었던 과목중에 제일 어려웠고 텀프로젝트도 힘들었지만, 제일 배워간게 많았고 실력이 늘었다는 느낌이 많이 들었습니다.\
+\
+개인적으로 전자공학을 제대로 이해하려면 꼭 들어아하는 과목이라고 생각합니다. 그만큼 디지털회로와 FPGA를 이해하는데 많은 도움이 되었습니다.\
+\
+후배분들이 이 문서를 본다면 본 강의 수강하기를 추천드립니다!!
